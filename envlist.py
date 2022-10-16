@@ -3,6 +3,7 @@
 from filelock import FileLock
 import hickle
 import sys
+import os
 
 # set constants
 file_path = "/data/picasso/envlist.hkl"
@@ -43,6 +44,9 @@ with lock:
         # create a list (named clist) of nevns environments with the 
         # prefix envprefix
         # add code here
+        clist = list()
+        for i in range(0,int(nenvs)):
+            clist.append(envprefix + str(i))
     else:
         # load hickle file
         clist = hickle.load(file_path)
@@ -50,9 +54,11 @@ with lock:
         if pmode == WRITE_MODE:
             # append item to end of list
             # add code here
-        else:    
+            clist.append(env)
+        else:
             # get and remove env from clist
             # add code here
+            env = clist.pop(0)
             # return env name
             print(env)
 
