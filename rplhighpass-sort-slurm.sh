@@ -31,4 +31,4 @@ print(time.localtime());"
 conda deactivate 
 /data/src/PyHipp/envlist.py $envarg
 
-aws sns publish --topic-arn arn:aws:sns:ap-southeast-1:763756016021:awsnotify --message "RPLHpsJobDone"
+

@@ -17,5 +17,3 @@ python -u -c "import PyHipp as pyh; \
 import time; \
 pyh.RPLLFP(saveLevel=1); \
 print(time.localtime());"
-
-aws sns publish --topic-arn arn:aws:sns:ap-southeast-1:763756016021:awsnotify --message "RPLLfpJobDone"
